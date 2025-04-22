@@ -10,7 +10,7 @@ int readPositiveNumber() {
     return number;
 }
 
-int reversedNumber(int number) {
+int reverseNumber(int number) {
     int reversedNumber = 0;
 
     while (number != 0) {
@@ -22,4 +22,4 @@ int reversedNumber(int number) {
     return reversedNumber;
 }
 
-int main() { cout << reversedNumber(readPositiveNumber()); }
+int main() { cout << reverseNumber(readPositiveNumber()); }
