@@ -20,6 +20,8 @@ char randomCharacter(const CharacterType CHARACTER_TYPE) {
         return static_cast<char>(randomNumber('!', '/'));
     case Digit:
         return static_cast<char>(randomNumber('0', '9'));
+    default:
+        return '\0';
     }
 }
 
