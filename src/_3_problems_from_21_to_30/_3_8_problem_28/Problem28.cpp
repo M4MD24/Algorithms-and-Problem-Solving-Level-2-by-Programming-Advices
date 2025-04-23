@@ -10,13 +10,13 @@ int readPositiveNumber() {
     return number;
 }
 
-int randomNumber(
-    const int FROM,
-    const int TO
+short randomNumber(
+    const short FROM,
+    const short TO
 ) { return rand() % (TO - FROM + 1) + FROM; }
 
 void fillRandomNumbers(
-    int numbers[],
+    short numbers[],
     int numberCount
 ) {
     while (numberCount--)
@@ -27,7 +27,7 @@ void fillRandomNumbers(
 }
 
 void printNumbers(
-    const int NUMBERS[],
+    const short NUMBERS[],
     const int NUMBER_COUNT
 ) {
     for (int index = 0; index < NUMBER_COUNT; ++index) {
@@ -38,26 +38,25 @@ void printNumbers(
 }
 
 void copyNumbers(
-    const int FIRST_NUMBERS[],
-    int secondNumber[],
+    const short ORIGINAL_NUMBERS[],
+    short secondNumber[],
     int numberCount
 ) {
     while (numberCount--)
-        secondNumber[numberCount] = FIRST_NUMBERS[numberCount];
+        secondNumber[numberCount] = ORIGINAL_NUMBERS[numberCount];
 }
 
 int main() {
     srand(static_cast<unsigned>(time(nullptr)));
 
     const int NUMBER_COUNT = readPositiveNumber();
-    int firstNumbers[NUMBER_COUNT];
+    short firstNumbers[NUMBER_COUNT];
+    short secondNumbers[NUMBER_COUNT];
 
     fillRandomNumbers(
         firstNumbers,
         NUMBER_COUNT
     );
-
-    int secondNumbers[NUMBER_COUNT];
 
     copyNumbers(
         firstNumbers,

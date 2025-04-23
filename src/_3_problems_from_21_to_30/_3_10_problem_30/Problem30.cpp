@@ -10,13 +10,13 @@ int readPositiveNumber() {
     return number;
 }
 
-int randomNumber(
-    const int FROM,
-    const int TO
+short randomNumber(
+    const short FROM,
+    const short TO
 ) { return rand() % (TO - FROM + 1) + FROM; }
 
 void fillRandomNumbers(
-    int numbers[],
+    short numbers[],
     int numberCount
 ) {
     while (numberCount--)
@@ -27,9 +27,9 @@ void fillRandomNumbers(
 }
 
 void calculateSumBetweenFirstAndSecondNumbers(
-    const int FIRST_NUMBERS[],
-    const int SECOND_NUMBERS[],
-    int numbersSumBetweenFirstAndSecondNumbers[],
+    const short FIRST_NUMBERS[],
+    const short SECOND_NUMBERS[],
+    short numbersSumBetweenFirstAndSecondNumbers[],
     int numberCount
 ) {
     while (numberCount--)
@@ -37,7 +37,7 @@ void calculateSumBetweenFirstAndSecondNumbers(
 }
 
 void printNumbers(
-    const int NUMBERS[],
+    const short NUMBERS[],
     const int NUMBER_COUNT
 ) {
     for (int index = 0; index < NUMBER_COUNT; ++index) {
@@ -51,9 +51,9 @@ int main() {
     srand(static_cast<unsigned>(time(nullptr)));
 
     const int NUMBER_COUNT = readPositiveNumber();
-    int firstNumbers[NUMBER_COUNT];
-    int secondNumbers[NUMBER_COUNT];
-    int numbersSumBetweenFirstAndSecondNumbers[NUMBER_COUNT];
+    short firstNumbers[NUMBER_COUNT];
+    short secondNumbers[NUMBER_COUNT];
+    short numbersSumBetweenFirstAndSecondNumbers[NUMBER_COUNT];
 
     fillRandomNumbers(
         firstNumbers,
