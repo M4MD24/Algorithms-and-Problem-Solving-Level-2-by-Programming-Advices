@@ -62,46 +62,46 @@ NumberStatus checkNumber(const short NUMBER) {
 }
 
 void copyPrimeNumbers(
-    const short FIRST_NUMBERS[],
-    const int FIRST_NUMBER_COUNT,
-    short secondNumber[],
-    int& secondNumberCount
+    const short ORIGINAL_NUMBERS[],
+    const int ORIGINAL_NUMBER_COUNT,
+    short anotherNumber[],
+    int& anotherNumberCount
 ) {
     int primeNumberCount = 0;
-    for (int index = 0; index < FIRST_NUMBER_COUNT; ++index)
+    for (int index = 0; index < ORIGINAL_NUMBER_COUNT; ++index)
         if (
-            const short CURRENT_NUMBER = FIRST_NUMBERS[index];
+            const short CURRENT_NUMBER = ORIGINAL_NUMBERS[index];
             checkNumber(CURRENT_NUMBER) == Prime
         )
-            secondNumber[primeNumberCount++] = CURRENT_NUMBER;
-    secondNumberCount = primeNumberCount;
+            anotherNumber[primeNumberCount++] = CURRENT_NUMBER;
+    anotherNumberCount = primeNumberCount;
 }
 
 int main() {
     srand(static_cast<unsigned>(time(nullptr)));
 
-    const int FIRST_NUMBER_COUNT = readPositiveNumber();
-    short firstNumbers[FIRST_NUMBER_COUNT];
+    const int ORIGINAL_NUMBER_COUNT = readPositiveNumber();
+    short originalNumbers[ORIGINAL_NUMBER_COUNT];
 
     fillRandomNumbers(
-        firstNumbers,
-        FIRST_NUMBER_COUNT
+        originalNumbers,
+        ORIGINAL_NUMBER_COUNT
     );
 
-    short secondNumbers[FIRST_NUMBER_COUNT];
+    short secondNumbers[ORIGINAL_NUMBER_COUNT];
     int secondNumberCount = 0;
 
     copyPrimeNumbers(
-        firstNumbers,
-        FIRST_NUMBER_COUNT,
+        originalNumbers,
+        ORIGINAL_NUMBER_COUNT,
         secondNumbers,
         secondNumberCount
     );
 
     cout << "First Numbers:" << endl;
     printNumbers(
-        firstNumbers,
-        FIRST_NUMBER_COUNT
+        originalNumbers,
+        ORIGINAL_NUMBER_COUNT
     );
 
     cout << "\nSecond Numbers:" << endl;
