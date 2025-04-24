@@ -48,9 +48,9 @@ NumberType isPalindrome(int number) {
     return NotPalindrome;
 }
 
-void printStatus(const NumberType IS_PALINDROME) {
+void printStatus(const NumberType STATUS) {
     cout << "Is";
-    if (IS_PALINDROME == NotPalindrome)
+    if (STATUS == NotPalindrome)
         cout << "n't";
     cout << " Palindrome";
 }
