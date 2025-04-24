@@ -12,9 +12,9 @@ int readPositiveNumber() {
 
 void readNumbers(
     int numbers[],
-    const int NUMBERS_COUNT
+    const int NUMBER_COUNT
 ) {
-    for (int index = 0; index < NUMBERS_COUNT; ++index) {
+    for (int index = 0; index < NUMBER_COUNT; ++index) {
         cout << "Element [" << index + 1 << "]:" << endl;
         cin >> numbers[index];
     }
@@ -59,7 +59,7 @@ int main() {
     );
     const int TARGET_NUMBER = readNumber();
 
-    cout << "Original Numbers: ";
+    cout << "Numbers: ";
     printNumbers(
         numbers,
         NUMBER_COUNT
