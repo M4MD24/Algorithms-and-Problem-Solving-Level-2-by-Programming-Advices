@@ -59,7 +59,7 @@ int main() {
     );
     const int TARGET_NUMBER = readNumber();
 
-    cout << "Original Numbers: ";
+    cout << "Numbers: ";
     printNumbers(
         numbers,
         NUMBER_COUNT
