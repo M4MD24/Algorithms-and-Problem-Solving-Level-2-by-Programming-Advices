@@ -38,34 +38,24 @@ void printNumbers(
     }
 }
 
-int FindNumberPositionInNumbers(
+void printLocationsOfTargetNumber(
     const int TARGET_NUMBER,
-    const int numbers[],
+    const int NUMBERS[],
     const int NUMBER_COUNT
 ) {
+    cout << "Number " << TARGET_NUMBER << endl;
+    int counter = 0;
+
     for (int index = 0; index < NUMBER_COUNT; ++index)
-        if (numbers[index] == TARGET_NUMBER)
-            return index;
-    return -1;
-}
+        if (NUMBERS[index] == TARGET_NUMBER) {
+            cout << "found at index " << index << endl;
+            ++counter;
+        }
 
-bool IsNumberInNumbers(
-    const int TARGET_NUMBER,
-    const int numbers[],
-    const int NUMBER_COUNT
-) {
-    return FindNumberPositionInNumbers(
-        TARGET_NUMBER,
-        numbers,
-        NUMBER_COUNT
-    ) != -1;
-}
-
-void printStatus(const bool STATUS) {
-    if (STATUS)
-        cout << "Found";
+    if (counter == 0)
+        cout << "not found" << endl;
     else
-        cout << "Not Found";
+        cout << "Total found: " << counter << " time(s)" << endl;
 }
 
 int main() {
@@ -85,11 +75,9 @@ int main() {
 
     cout << endl;
 
-    printStatus(
-        IsNumberInNumbers(
-            TARGET_NUMBER,
-            numbers,
-            NUMBER_COUNT
-        )
+    printLocationsOfTargetNumber(
+        TARGET_NUMBER,
+        numbers,
+        NUMBER_COUNT
     );
 }
