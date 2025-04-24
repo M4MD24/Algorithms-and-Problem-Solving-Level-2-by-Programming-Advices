@@ -39,40 +39,40 @@ void printNumbers(
 
 void copyNumbers(
     const short ORIGINAL_NUMBERS[],
-    short secondNumber[],
+    short anotherNumbers[],
     int numberCount
 ) {
     while (numberCount--)
-        secondNumber[numberCount] = ORIGINAL_NUMBERS[numberCount];
+        anotherNumbers[numberCount] = ORIGINAL_NUMBERS[numberCount];
 }
 
 int main() {
     srand(static_cast<unsigned>(time(nullptr)));
 
     const int NUMBER_COUNT = readPositiveNumber();
-    short firstNumbers[NUMBER_COUNT];
-    short secondNumbers[NUMBER_COUNT];
+    short originalNumbers[NUMBER_COUNT];
+    short anotherNumbers[NUMBER_COUNT];
 
     fillRandomNumbers(
-        firstNumbers,
+        originalNumbers,
         NUMBER_COUNT
     );
 
     copyNumbers(
-        firstNumbers,
-        secondNumbers,
+        originalNumbers,
+        anotherNumbers,
         NUMBER_COUNT
     );
 
-    cout << "First Numbers:" << endl;
+    cout << "Original Numbers:" << endl;
     printNumbers(
-        firstNumbers,
+        originalNumbers,
         NUMBER_COUNT
     );
 
-    cout << "\nSecond Numbers:" << endl;
+    cout << "\nAnother Numbers:" << endl;
     printNumbers(
-        secondNumbers,
+        anotherNumbers,
         NUMBER_COUNT
     );
 }
