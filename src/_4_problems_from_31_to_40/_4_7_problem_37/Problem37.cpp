@@ -29,14 +29,14 @@ void readNumbers(
 void copyNumbers(
     const int ORIGINAL_NUMBERS[],
     int anotherNumbers[],
-    const int ORIGINAL_NUMBER_SCOUNT,
-    int& anotherNumbersCount
+    const int ORIGINAL_NUMBER_COUNT,
+    int& anotherNumberCount
 ) {
-    for (int index = 0; index < ORIGINAL_NUMBER_SCOUNT; ++index)
+    for (int index = 0; index < ORIGINAL_NUMBER_COUNT; ++index)
         addNumber(
             ORIGINAL_NUMBERS[index],
             anotherNumbers,
-            anotherNumbersCount
+            anotherNumberCount
         );
 }
 
