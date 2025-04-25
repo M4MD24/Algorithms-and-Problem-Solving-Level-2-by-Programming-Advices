@@ -237,6 +237,4 @@ int main() {
     srand(static_cast<unsigned>(time(nullptr)));
 
     startGame();
-
-    return 0;
 }
