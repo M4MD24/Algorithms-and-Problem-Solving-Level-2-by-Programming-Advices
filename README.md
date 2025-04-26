@@ -57,4 +57,4 @@
     10. [Problem 50](src/_5_problems_from_41_to_50/_5_10_problem_50)
 6. [Projects](src/_6_projects)
     1. [Rock-Paper-Scissors](src/_6_projects/_6_1_rock_paper_scissors)
-    2. ~~[Math Quiz](src/_6_projects/_6_2_math_quiz)~~
+    2. [Math Quiz](src/_6_projects/_6_2_math_quiz)
