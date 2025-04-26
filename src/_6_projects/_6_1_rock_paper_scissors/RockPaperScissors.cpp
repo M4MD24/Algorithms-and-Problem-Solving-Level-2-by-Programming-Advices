@@ -21,8 +21,8 @@ struct Stats {
     string finalWinner;
 };
 
-short readPositiveNumber(const string& INPUT_MESSAGE) {
-    short number;
+long readPositiveNumber(const string& INPUT_MESSAGE) {
+    long number;
     do {
         cout << INPUT_MESSAGE << endl;
         cin >> number;
@@ -57,7 +57,6 @@ short readChoiceNumber() {
 Choice checkChoice(const short CHOICE_NUMBER) {
     switch (CHOICE_NUMBER) {
     case 1:
-
         return Rock;
     case 2:
         return Paper;
