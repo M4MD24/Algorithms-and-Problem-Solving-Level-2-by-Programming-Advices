@@ -37,18 +37,18 @@ void printNumbers(
     }
 }
 
-long numbersSum(
+long long numbersSum(
     const short NUMBERS[],
     int numberCount
 ) {
-    long sum = 0;
+    long long sum = 0;
     while (numberCount--)
         sum += NUMBERS[numberCount];
     return sum;
 }
 
 double averageNumbers(
-    const long NUMBERS_SUM,
+    const long long NUMBERS_SUM,
     const int NUMBER_COUNT
 ) { return NUMBERS_SUM / static_cast<double>(NUMBER_COUNT); }
 
@@ -68,7 +68,7 @@ int main() {
         NUMBER_COUNT
     );
 
-    const long NUMBERS_SUM = numbersSum(
+    const long long NUMBERS_SUM = numbersSum(
         numbers,
         NUMBER_COUNT
     );

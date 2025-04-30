@@ -26,11 +26,11 @@ struct Question {
 };
 
 struct Stats {
-    long numberOfQuestions;
+    long long numberOfQuestions;
     DifficultyLevel difficultyLevel;
     OperationType operationType;
-    long numberOfRightAnswers;
-    long numberOfWrongAnswers;
+    long long numberOfRightAnswers;
+    long long numberOfWrongAnswers;
 };
 
 short randomNumber(
@@ -47,10 +47,14 @@ bool anotherQuiz() {
     return anotherQuiz == "yes";
 }
 
-void printCurrentQuestion(const long INDEX) { cout << "Question [" << INDEX << "]" << endl; }
+void printCurrentQuestion(
+    const long long INDEX
+) { cout << "Question [" << INDEX << "]" << endl; }
 
-long readPositiveNumber(const string& INPUT_MESSAGE) {
-    long number;
+long long readPositiveNumber(
+    const string& INPUT_MESSAGE
+) {
+    long long number;
     do {
         cout << INPUT_MESSAGE << endl;
         cin >> number;
@@ -58,7 +62,9 @@ long readPositiveNumber(const string& INPUT_MESSAGE) {
     return number;
 }
 
-DifficultyLevel chooseDifficultyLevel(const short DIFFICULTY_LEVEL_CHOICE_NUMBER) {
+DifficultyLevel chooseDifficultyLevel(
+    const short DIFFICULTY_LEVEL_CHOICE_NUMBER
+) {
     switch (DIFFICULTY_LEVEL_CHOICE_NUMBER) {
     case 1:
         return Easy;
@@ -89,7 +95,9 @@ short readDifficultyLevelChoiceNumber() {
     return number;
 }
 
-OperationType chooseOperationType(const short OPERATION_TYPE_CHOICE_NUMBER) {
+OperationType chooseOperationType(
+    const short OPERATION_TYPE_CHOICE_NUMBER
+) {
     switch (OPERATION_TYPE_CHOICE_NUMBER) {
     case 1:
         return Add;
@@ -130,12 +138,22 @@ OperationType getRandomOperation() {
         Multiply,
         Divisor
     };
-    return static_cast<OperationType>(operationTypes[randomNumber(0, 3)]);
+    return static_cast<OperationType>(operationTypes[randomNumber(
+        0,
+        3
+    )]);
 }
 
-DifficultyLevel getRandomDifficultyLevel() { return static_cast<DifficultyLevel>(randomNumber(1, 3)); }
+DifficultyLevel getRandomDifficultyLevel() {
+    return static_cast<DifficultyLevel>(randomNumber(
+        1,
+        3
+    ));
+}
 
-double getCorrectResult(const Question& QUESTION) {
+double getCorrectResult(
+    const Question& QUESTION
+) {
     switch (QUESTION.operationType) {
     case Add:
         return QUESTION.firstNumber + QUESTION.secondNumber;
@@ -148,7 +166,9 @@ double getCorrectResult(const Question& QUESTION) {
     }
 }
 
-string getDifficultyLevel(const DifficultyLevel DIFFICULTY_LEVEL) {
+string getDifficultyLevel(
+    const DifficultyLevel DIFFICULTY_LEVEL
+) {
     switch (DIFFICULTY_LEVEL) {
     case Easy:
         return "Easy";
@@ -162,19 +182,23 @@ string getDifficultyLevel(const DifficultyLevel DIFFICULTY_LEVEL) {
 }
 
 void printQuestion(
-    const long NUMBER_OF_QUESTIONS,
+    const long long NUMBER_OF_QUESTIONS,
     const int INDEX,
     const DifficultyLevel DIFFICULTY_LEVEL,
     const Question& QUESTION
 ) {
-    cout << "Question Number [" << INDEX << "/" << NUMBER_OF_QUESTIONS << "] " << getDifficultyLevel(DIFFICULTY_LEVEL) << endl;
+    cout << "Question Number [" << INDEX << "/" << NUMBER_OF_QUESTIONS << "] " << getDifficultyLevel(
+        DIFFICULTY_LEVEL
+    ) << endl;
     cout << QUESTION.firstNumber << endl;
     cout << static_cast<char>(QUESTION.operationType) << endl;
     cout << QUESTION.secondNumber << endl;
     cout << "--------------------" << endl;
 }
 
-double randomNumberByDifficulty(const DifficultyLevel DIFFICULTY_LEVEL) {
+double randomNumberByDifficulty(
+    const DifficultyLevel DIFFICULTY_LEVEL
+) {
     switch (DIFFICULTY_LEVEL) {
     case Easy:
         return randomNumber(
@@ -205,7 +229,9 @@ void generateQuestion(
     else
         question.difficultyLevel = STATS.difficultyLevel;
 
-    question.firstNumber = randomNumberByDifficulty(question.difficultyLevel);
+    question.firstNumber = randomNumberByDifficulty(
+        question.difficultyLevel
+    );
 
     if (IS_MIX_OPERATION_TYPE)
         question.operationType = getRandomOperation();
@@ -217,7 +243,9 @@ void generateQuestion(
         12
     );
 
-    question.correctAnswer = getCorrectResult(question);
+    question.correctAnswer = getCorrectResult(
+        question
+    );
 }
 
 double readNumber() {
@@ -228,7 +256,10 @@ double readNumber() {
         valid = !cin.fail();
         if (!valid) {
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin.ignore(
+                numeric_limits<streamsize>::max(),
+                '\n'
+            );
         }
     } while (!valid);
     return number;
@@ -248,11 +279,13 @@ void answerQuestion(
     cout << endl << endl;
 }
 
-void askQuestions(Stats& stats) {
+void askQuestions(
+    Stats& stats
+) {
     const bool IS_MIX_DIFFICULTY_LEVEL = stats.difficultyLevel == MixDifficultyLevel,
                IS_MIX_OPERATION_TYPE = stats.operationType == MixOperationType;
 
-    for (long index = 1; index <= stats.numberOfQuestions; ++index) {
+    for (long long index = 1; index <= stats.numberOfQuestions; ++index) {
         Question question{};
 
         generateQuestion(
@@ -276,7 +309,9 @@ void askQuestions(Stats& stats) {
     }
 }
 
-string getOperationType(const Stats& STATS) {
+string getOperationType(
+    const Stats& STATS
+) {
     switch (STATS.operationType) {
     case Add:
         return "Add";
@@ -291,10 +326,16 @@ string getOperationType(const Stats& STATS) {
     }
 }
 
-void printQuizStats(const Stats& stats) {
+void printQuizStats(
+    const Stats& stats
+) {
     cout << "Number of Questions: " << stats.numberOfQuestions << endl;
-    cout << "Difficulty Level: " << getDifficultyLevel(stats.difficultyLevel) << endl;
-    cout << "Operation Type: " << getOperationType(stats) << endl;
+    cout << "Difficulty Level: " << getDifficultyLevel(
+        stats.difficultyLevel
+    ) << endl;
+    cout << "Operation Type: " << getOperationType(
+        stats
+    ) << endl;
     cout << "Number of Right Answers: " << stats.numberOfRightAnswers << endl;
     cout << "Number of Wrong Answers: " << stats.numberOfWrongAnswers << endl << endl;
 }
@@ -303,7 +344,9 @@ void startGame() {
     do {
         Stats stats{};
 
-        stats.numberOfQuestions = readPositiveNumber("How many questions?");
+        stats.numberOfQuestions = readPositiveNumber(
+            "How many questions?"
+        );
 
         stats.difficultyLevel = chooseDifficultyLevel(
             readDifficultyLevelChoiceNumber()
@@ -313,13 +356,21 @@ void startGame() {
             readOperationTypeChoiceNumber()
         );
 
-        askQuestions(stats);
+        askQuestions(
+            stats
+        );
 
-        printQuizStats(stats);
+        printQuizStats(
+            stats
+        );
     } while (anotherQuiz());
 }
 
 int main() {
-    srand(static_cast<unsigned>(time(nullptr)));
+    srand(
+        static_cast<unsigned>(time(
+            nullptr
+        ))
+    );
     startGame();
 }

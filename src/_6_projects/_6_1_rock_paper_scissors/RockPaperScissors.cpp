@@ -15,14 +15,14 @@ enum Player {
 };
 
 struct Stats {
-    long numberOfRealPlayerWins;
-    long numberOfComputerWins;
-    long numberOfDraws;
+    long long numberOfRealPlayerWins;
+    long long numberOfComputerWins;
+    long long numberOfDraws;
     string finalWinner;
 };
 
-long readPositiveNumber(const string& INPUT_MESSAGE) {
-    long number;
+long long readPositiveNumber(const string& INPUT_MESSAGE) {
+    long long number;
     do {
         cout << INPUT_MESSAGE << endl;
         cin >> number;
@@ -30,7 +30,7 @@ long readPositiveNumber(const string& INPUT_MESSAGE) {
     return number;
 }
 
-void printCurrentRound(const long INDEX) { cout << "Round [" << INDEX << "]" << endl; }
+void printCurrentRound(const long long INDEX) { cout << "Round [" << INDEX << "]" << endl; }
 
 void printChoicesList() {
     cout << "Choose from list:" << endl;
@@ -166,10 +166,10 @@ void playRound(Stats& stats) {
 }
 
 void playRounds(
-    const long ROUNDS,
+    const long long ROUNDS,
     Stats& stats
 ) {
-    for (long index = 1; index <= ROUNDS; ++index) {
+    for (long long index = 1; index <= ROUNDS; ++index) {
         printCurrentRound(index);
         playRound(stats);
     }
@@ -190,7 +190,7 @@ Player findOutWhoFinalWon(const Stats& STATS) {
 }
 
 void printRoundsStats(
-    const long ROUNDS,
+    const long long ROUNDS,
     const Stats& STATS
 ) {
     cout << "Game Over" << endl;
@@ -213,7 +213,7 @@ bool playAgain() {
 
 void startGame() {
     do {
-        const long ROUNDS = readPositiveNumber("How many rounds?");
+        const long long ROUNDS = readPositiveNumber("How many rounds?");
 
         Stats stats = {};
 

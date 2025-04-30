@@ -37,11 +37,11 @@ void printNumbers(
     }
 }
 
-long numbersSum(
+long long numbersSum(
     const short NUMBERS[],
     int numberCount
 ) {
-    long sum = 0;
+    long long sum = 0;
     while (numberCount--)
         sum += NUMBERS[numberCount];
     return sum;
