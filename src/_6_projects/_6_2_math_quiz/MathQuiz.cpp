@@ -252,7 +252,7 @@ void askQuestions(Stats& stats) {
     const bool IS_MIX_DIFFICULTY_LEVEL = stats.difficultyLevel == MixDifficultyLevel,
                IS_MIX_OPERATION_TYPE = stats.operationType == MixOperationType;
 
-    for (int index = 1; index <= stats.numberOfQuestions; ++index) {
+    for (long index = 1; index <= stats.numberOfQuestions; ++index) {
         Question question{};
 
         generateQuestion(
