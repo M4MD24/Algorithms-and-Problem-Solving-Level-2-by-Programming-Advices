@@ -44,7 +44,6 @@ void printKeys(
         cout << "Key [" << index + 1 << "] = " << KEYS[index] << endl;
 }
 
-
 int main() {
     srand(static_cast<unsigned>(time(nullptr)));
 

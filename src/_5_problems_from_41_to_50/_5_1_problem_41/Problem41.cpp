@@ -31,7 +31,6 @@ bool isPalindromeNumbers(
     return true;
 }
 
-
 void printNumbers(
     const int NUMBERS[],
     const int NUMBER_COUNT

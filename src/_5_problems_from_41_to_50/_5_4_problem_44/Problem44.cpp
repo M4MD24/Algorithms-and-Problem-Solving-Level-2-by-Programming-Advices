@@ -37,7 +37,6 @@ int positiveNumberCount(
     return counter;
 }
 
-
 void printNumbers(
     const short NUMBERS[],
     const int NUMBER_COUNT
